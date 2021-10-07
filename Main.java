@@ -3,30 +3,25 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        createObject("Кыргызстан");
+        createObject("Кыргызстан").print();
         System.out.println("-------------------");
-        createObject("Япония");
+        createObject("Япония").print();
         System.out.println("-------------------");
-        createObject("Великобритания");
+        createObject("Великобритания").print();
 
     }
 
-    public static void createObject(String className){
+    public static Country createObject(String className){
         switch (className){
             case "Кыргызстан":
-                Kyrgyzstan kyrgyzstan = new Kyrgyzstan("кыргызский, русский", 6592000,
+                return new Kyrgyzstan("кыргызский, русский", 6592000,
                         "светское государство", "Средняя Азия");
-                System.out.println(className); kyrgyzstan.print();
-                break;
             case "Япония":
-                Japan japan = new Japan("японский", 125552000, "Токио", 6852);
-                System.out.println(className); japan.print();
-                break;
+                return new Japan("японский", 125552000, "Токио", 6852);
             case "Великобритания":
-                GreatBritain greatBritain = new GreatBritain("английский", 66273576,
+                return new GreatBritain("английский", 66273576,
                         "Елизавета II", "фунт стерлингов");
-                System.out.println(className); greatBritain.print();
-                break;
         }
+        return null;
     }
 }
